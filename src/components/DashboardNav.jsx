@@ -5,13 +5,13 @@ import Home from './Home';
 export default function DashboardNav(){
     return (
         <Router>
-        <div>
-          <nav>
+        <div className="flex min-h-screen">
+          <nav className="w-32 bg-black text-white p-4">
             <ul>
-            <li>
+            <li className='pb-4'>
                 <Link to="/home">Home</Link>
               </li>
-              <li>
+              <li className='pb-4'>
                 <Link to="/matches">Mecze</Link>
               </li>  
             </ul>

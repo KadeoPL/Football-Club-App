@@ -1,7 +1,9 @@
+import Match from "./Match";
+
 export default function Matches(){
     return (
         <>
-            <p>Lista meczy</p>
+            <Match />
         </>
     )
 }
