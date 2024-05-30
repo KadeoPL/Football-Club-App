@@ -18,9 +18,9 @@ export default function DashboardNav(){
           </nav>
   
           <Routes>
-            <Route path="/home" element={<Home/>} />
-            <Route path="/matches" element={<Matches />} />
-          </Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/matches/*" element={<Matches />} />
+        </Routes>
         </div>
       </Router>
     )
