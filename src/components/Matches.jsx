@@ -5,7 +5,10 @@ import AddMatch from './AddMatch';
 export default function Matches() {
   return (
     <div className="flex flex-col">
-      <Link to="addmatch" className="text-blue-500">Dodaj mecz</Link>
+        <div className='flex flex-row items-center'>
+            <h1 className='text-6xl'>Mecze</h1>
+            <Link to="addmatch" className="text-blue-500">Dodaj mecz</Link>
+        </div>
       
       <Routes>
         <Route path="addmatch" element={<AddMatch />} />

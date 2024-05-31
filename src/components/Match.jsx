@@ -16,7 +16,7 @@ export default function Match(){
             </div>
             <div className="flex flex-row space-x-2">
                 <button>Edytuj</button>
-                <button>Usuń</button>
+                <button className="bg-red-500">Usuń</button>
             </div>
         </div>
     )
