@@ -1,21 +1,19 @@
 import { Link, Route, Routes } from 'react-router-dom';
-import Match from './Match';
 import AddMatch from './AddMatch';
-import { useState } from 'react';
+import MatchesList from './MatchesList';
+import { useEffect, useState } from 'react';
 
 export default function Matches() {
-  const [formData, setFormData] = useState({
-    teamOne: '',
-    teamTwo: '',
-    date: '',
-    time: '',
-    location: '',
-  });
+  const [matches, setMatches] = useState([]);
 
-  const handleFormSubmit = (data) => {
-    setFormData(data);
+  const handleFormSubmit = (newMatch) => {
+    setMatches(prevMatches => [...prevMatches, newMatch]);
   }
-  
+
+  useEffect(() => {
+    console.log(matches);
+  }, [matches]);
+
   return (
     <div className="flex flex-col">
         <div className='flex flex-row items-center'>
@@ -27,7 +25,7 @@ export default function Matches() {
         <Route path="addmatch" element={<AddMatch onFormSubmit={handleFormSubmit}/>} />
       </Routes>
 
-      <Match formData={formData}/>
+      <MatchesList matches={matches} />
     </div>
   );
 }

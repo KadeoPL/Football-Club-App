@@ -13,17 +13,18 @@ export default function AddMatch({ onFormSubmit }) {
     const navigate = useNavigate();
 
     const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData(prevData => ({
-        ...prevData,
-        [name]: value
-    }));
+        const { name, value } = e.target;
+        setFormData(prevData => ({
+            ...prevData,
+            [name]: value
+        }));
     };
 
-    function handleSubmit(){
+    const handleSubmit = (e) => {
+        e.preventDefault();
         onFormSubmit(formData);
         navigate('/matches');
-    }
+      };
 
     return (
         <form onSubmit={handleSubmit}>
