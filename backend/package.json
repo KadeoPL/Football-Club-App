@@ -1,5 +1,5 @@
 {
-  "name": "football-club-app",
+  "name": "backend",
   "private": true,
   "version": "0.1.0",
   "description": "A Strapi application",
@@ -26,7 +26,7 @@
     "name": "A Strapi developer"
   },
   "strapi": {
-    "uuid": "91bf86ce-9163-4b8a-a846-7c3593578792"
+    "uuid": "73b5515a-c6bb-40aa-b767-1f2046a91de7"
   },
   "engines": {
     "node": ">=18.0.0 <=20.x.x",
