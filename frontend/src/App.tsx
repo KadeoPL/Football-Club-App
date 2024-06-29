@@ -9,7 +9,7 @@ function App() {
 
   return (
     <Router>
-    <div>
+    <div className="font-body">
     <SiteHeader />
     <Routes>
       <Route path="/" element={<Homepage/>} />

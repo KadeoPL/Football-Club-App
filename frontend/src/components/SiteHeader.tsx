@@ -32,8 +32,8 @@ export default function SiteHeader() {
             />
         </div>
         <div className="hidden md:flex flex-row">
-          {navItems.map(item => (
-            <Link to={item.path}> {item.text}</Link>
+          {navItems.map((item, index) => (
+            <Link key={index} to={item.path}> {item.text}</Link>
           ))}
         </div>
         <div onClick={handleNav} className="block md:hidden">
@@ -43,12 +43,12 @@ export default function SiteHeader() {
         <div
           className={
             nav
-              ? 'fixed md:hidden left-0 top-0 w-[60%] bg-white h-fullease-in-out duration-500'
+              ? 'fixed md:hidden left-0 top-0 w-[60%] bg-white h-full ease-in-out duration-500'
               : 'ease-in-out w-[60%] duration-500 fixed top-0 bottom-0 left-[-100%]'
           }
         >
-          {navItems.map(item => (
-            <div
+          {navItems.map((item, index) => (
+            <div key={index}
               className='p-4 rounded-xl hover:bg-[#00df9a] duration-300 hover:text-black cursor-pointer'>
               <Link to={item.path} onClick={handleNav}> {item.text}</Link>
             </div>
