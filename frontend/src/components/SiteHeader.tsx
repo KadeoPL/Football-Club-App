@@ -15,7 +15,7 @@ export default function SiteHeader() {
 
   const navItems: {path: string, text: string}[] = [
     { path: '/', text:'Strona główna' },
-    { path: '/', text:'Aktualności' },
+    { path: '/posts', text:'Aktualności' },
     { path: '/', text:'Seniorzy' },
     { path: '/', text:'Szkółka Piłkarska' },
     { path: '/', text:'Multimedia' },
@@ -33,14 +33,14 @@ export default function SiteHeader() {
         </div>
         <div className="hidden md:flex flex-row">
           {navItems.map(item => (
-            <Link to={item.path}>{item.text}</Link>
+            <Link to={item.path}> {item.text}</Link>
           ))}
         </div>
         <div onClick={handleNav} className="block md:hidden">
           {!nav  ? <Bars3BottomLeftIcon className="h-6 w-6 text-gray-500" /> : <XMarkIcon className="h-6 w-6 text-gray-500" />}
         </div>
 
-        <ul
+        <div
           className={
             nav
               ? 'fixed md:hidden left-0 top-0 w-[60%] bg-white h-fullease-in-out duration-500'
@@ -48,12 +48,12 @@ export default function SiteHeader() {
           }
         >
           {navItems.map(item => (
-            <li
+            <div
               className='p-4 rounded-xl hover:bg-[#00df9a] duration-300 hover:text-black cursor-pointer'>
-              {item.text}
-            </li>
+              <Link to={item.path} onClick={handleNav}> {item.text}</Link>
+            </div>
           ))}
-        </ul>
+        </div>
     </div>
   )
 }
